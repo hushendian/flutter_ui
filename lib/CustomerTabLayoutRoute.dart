@@ -31,9 +31,14 @@ class CustomerTabLayoutRoute extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return CustomerTabLayout(
-      list: _buildListWidget(),
-      onTapListener: this,
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+        child: CustomerTabLayout(
+          list: _buildListWidget(),
+          onTapListener: this,
+        ),
+      ),
     );
   }
 

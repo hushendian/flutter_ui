@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/CustomerTabLayoutRoute.dart';
 import 'package:flutter_app/FlowLayoutRouter.dart';
 
 class MainPanel extends StatelessWidget {
@@ -16,6 +17,12 @@ class MainPanel extends StatelessWidget {
             toOtherPage(context, FlowLayoutRouter());
           },
         ),
+        ListTile(
+          title: Text("通用TabLayout"),
+          onTap: () {
+            toOtherPage(context, CustomerTabLayoutRoute());
+          },
+        )
       ],
     );
   }
