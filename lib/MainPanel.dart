@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/CustomerTabLayoutRoute.dart';
+import 'package:flutter_app/EmptyPage.dart';
 import 'package:flutter_app/FlowLayoutRouter.dart';
 
 import 'SharePopupRouter.dart';
@@ -29,6 +30,12 @@ class MainPanel extends StatelessWidget {
           title: Text("通用BottomSheet"),
           onTap: () {
             toOtherPage(context, SharePopupRouter());
+          },
+        ),
+        ListTile(
+          title: Text("通用空页面"),
+          onTap: () {
+            toOtherPage(context, EmptyPage(imageUrl: "images/nonet.png",desc: "网络飞走了",));
           },
         )
       ],
