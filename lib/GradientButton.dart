@@ -17,44 +17,50 @@ class GradientButton extends StatelessWidget {
   int position = -1; //图标位置
   final Border border; //边框
   double _marge;
+  VoidCallback onTap;
 
-  GradientButton({
-    this.colors,
-    this.width,
-    this.height,
-    this.textColor,
-    this.textSize,
-    this.radius,
-    this.position,
-    this.imagePath,
-    this.imageWidth,
-    this.imageHeight,
-    this.marge,
-    this.border,
-    @required this.text,
-  });
+  GradientButton(
+      {this.colors,
+      this.width,
+      this.height,
+      this.textColor,
+      this.textSize,
+      this.radius,
+      this.position,
+      this.imagePath,
+      this.imageWidth,
+      this.imageHeight,
+      this.marge,
+      this.border,
+      @required this.text,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
     List<Color> _colors = colors ?? [Color(0xFFE251), Color(0xFDD108)];
     _marge = marge ?? 2;
     Border _border = border ?? Border.all(color: Colors.transparent, width: 1);
-    return DecoratedBox(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(colors: _colors),
-          borderRadius: radius,
-          border: _border),
-      child: ConstrainedBox(
-        constraints: BoxConstraints.tightFor(width: width, height: height),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: DefaultTextStyle(
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: textSize,
-                  color: textColor),
-              child: _buildButtonWidget(),
+    return GestureDetector(
+      onTap: () {
+        onTap();
+      },
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: _colors),
+            borderRadius: radius,
+            border: _border),
+        child: ConstrainedBox(
+          constraints: BoxConstraints.tightFor(width: width, height: height),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DefaultTextStyle(
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: textSize,
+                    color: textColor),
+                child: _buildButtonWidget(),
+              ),
             ),
           ),
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/CustomerTabLayoutRoute.dart';
 import 'package:flutter_app/EmptyPage.dart';
 import 'package:flutter_app/FlowLayoutRouter.dart';
+import 'package:flutter_app/GradientButtonRoute.dart';
 
 import 'SharePopupRouter.dart';
 
@@ -35,9 +36,20 @@ class MainPanel extends StatelessWidget {
         ListTile(
           title: Text("通用空页面"),
           onTap: () {
-            toOtherPage(context, EmptyPage(imageUrl: "images/nonet.png",desc: "网络飞走了",));
+            toOtherPage(
+                context,
+                EmptyPage(
+                  imageUrl: "images/nonet.png",
+                  desc: "网络飞走了",
+                ));
           },
-        )
+        ),
+        ListTile(
+          title: Text("通用Button"),
+          onTap: () {
+            toOtherPage(context, GradientButtonRoute());
+          },
+        ),
       ],
     );
   }

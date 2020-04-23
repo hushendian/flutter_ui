@@ -10,7 +10,8 @@ class _GradientButtonRouteState extends State<GradientButtonRoute> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      color: Colors.white,
+      padding: EdgeInsets.all(20.0),
       child: Column(
         children: <Widget>[
           Padding(
@@ -83,6 +84,9 @@ class _GradientButtonRouteState extends State<GradientButtonRoute> {
               textSize: 20,
               radius: BorderRadius.circular(5),
               text: "正常",
+              onTap: (){
+                print("00000");
+              },
             ),
           ),
         ],
