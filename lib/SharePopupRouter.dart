@@ -49,7 +49,7 @@ class SharePopupRouter extends StatelessWidget implements OnItemClickListener {
             return new FlatButton(
                 onPressed: () {
                   SharePopupWindow.showBottomSheet(
-                      context, _buildItemList(), this, false, null, null);
+                      context, _buildItemList(), this, true, null, null);
                 },
                 child: new Text("我要分享"),
                 color: Colors.blue);

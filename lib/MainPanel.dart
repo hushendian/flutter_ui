@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/CustomerTabLayoutRoute.dart';
 import 'package:flutter_app/FlowLayoutRouter.dart';
 
+import 'SharePopupRouter.dart';
+
 class MainPanel extends StatelessWidget {
   Widget _buildPanelWidget(BuildContext context) {
     return Column(
@@ -21,6 +23,12 @@ class MainPanel extends StatelessWidget {
           title: Text("通用TabLayout"),
           onTap: () {
             toOtherPage(context, CustomerTabLayoutRoute());
+          },
+        ),
+        ListTile(
+          title: Text("通用BottomSheet"),
+          onTap: () {
+            toOtherPage(context, SharePopupRouter());
           },
         )
       ],
