@@ -45,7 +45,6 @@ flutter:
     - images/icons/location_icon.png
     - images/icons/icon_copy.png
     - images/icon_man.png
-    - images/icons/empty_clue.png
     - images/icons/icon_tag.png
     - images/icons/icon_give_up.png
     - images/icons/icon_next_time.png

@@ -8,14 +8,14 @@ class GradientButton extends StatelessWidget {
   final double height; //按钮高度
   final Color textColor; //按钮字体色值
   final double textSize; //按钮字体大小
-  final BorderRadius radius; //按钮圆角
+  final double radius; //按钮圆角
   final String imagePath; //按钮图标
   final double imageWidth; //按钮图标宽度
   final double imageHeight; //按钮图标高度
   final double marge; //图标与文字间距
   final String text; //文字
   int position = -1; //图标位置
-  final Border border; //边框
+  final Color borderColor; //边框
   double _marge;
   VoidCallback onTap;
 
@@ -31,7 +31,7 @@ class GradientButton extends StatelessWidget {
       this.imageWidth,
       this.imageHeight,
       this.marge,
-      this.border,
+      this.borderColor,
       @required this.text,
       this.onTap});
 
@@ -39,7 +39,7 @@ class GradientButton extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Color> _colors = colors ?? [Color(0xFFE251), Color(0xFDD108)];
     _marge = marge ?? 2;
-    Border _border = border ?? Border.all(color: Colors.transparent, width: 1);
+    var _borderColor = borderColor ?? Colors.transparent;
     return GestureDetector(
       onTap: () {
         onTap();
@@ -47,8 +47,8 @@ class GradientButton extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: _colors),
-            borderRadius: radius,
-            border: _border),
+            borderRadius: BorderRadius.circular(radius ?? 8),
+            border: Border.all(color: _borderColor, width: 1)),
         child: ConstrainedBox(
           constraints: BoxConstraints.tightFor(width: width, height: height),
           child: Center(
